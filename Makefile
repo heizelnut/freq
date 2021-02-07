@@ -11,17 +11,16 @@ MAN	:= freq.1
 
 .PHONY: all clean
 
-all: freq
+all: $(TARGETS)
 
 clean:
 	rm -rf $(TARGETS) $(OBJ)
 .c.o:
 	$(CC) -c $(CFLAGS) $<
 
-freq: $(OBJ)
+$(TARGETS): $(OBJ)
 	$(CC) -o $@ $(OBJ)
 
 install: all
 	install $(TARGETS) $(DIR)/$(TARGETS)
 	install $(MAN) $(MANPAGE)/man1/$(MAN)
-
