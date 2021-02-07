@@ -1,0 +1,33 @@
+.TH FREQ 1 freq
+.SH NAME
+freq \- frequency of characters in an ASCII text
+.SH DESCRIPTION
+Reads from stdin ASCII text to analyze and prints out a list of tab-separated
+characters
+.B (including spaces)
+with their frequency on the same line.
+.SH EXAMPLE
+The general use of this could be:
+.PP
+.RS
+cat input.txt | freq
+.RE
+.PP
+Or even better:
+.PP
+.RS
+freq 
+.B < input.txt
+.RE
+.PP
+.PP
+A better usecase in conjunction with other programs:
+.PP
+.RS
+freq < input.txt | sort -nr | sed 5q | awk '{ print $2 }'
+.RE 
+.PP
+to see the 5 most frequent characters in a file.
+
+.SH AUTHOR
+(c) Emanuele Lillo <ecl@tfwno.gf>
