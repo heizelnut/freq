@@ -21,7 +21,7 @@ main(int argc, char* argv[]) {
 		freq[i] = 0;
 
 	// Buffer variable
-	char c;
+	short c;
 
 	do {
 		c = getchar();
